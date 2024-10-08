@@ -1,0 +1,45 @@
+.profile {
+  position: relative;
+  height: 75vw;
+  width: 75vw;
+  border-radius: 5vw;
+  margin-top: 5vw;
+  max-height: 40rem;
+  max-width: 40rem;
+}
+.profile .profile-img {
+  height: 80vw;
+  max-height: 45rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 {
+  position: absolute;
+  width: 3vw;
+}
+.profile .dots-1 { right: 1.5vw; top: 4vw; }
+.profile .dots-2 { right: -4vw; top: 6.05vw; }
+.profile .dots-3 { left: 1.5vw; bottom: 6.05vw; }
+.profile .dots-4 { left: -4vw; bottom: 4vw; }
+.profile .dots-1 svg, .profile .dots-3 svg { fill: #fff; }
+.profile .dots-2 svg, .profile .dots-4 svg { fill: #1e30f3; }
+
+@media (min-width: 576px) {
+  .profile { height: 60vw; width: 60vw; }
+  .profile .profile-img { height: 65vw; }
+}
+@media (min-width: 768px) {
+  .profile { height: 50vw; width: 50vw; }
+  .profile .profile-img { height: 55vw; }
+}
+@media (min-width: 992px) {
+  .profile { height: 40vw; width: 40vw; }
+  .profile .profile-img { height: 45vw; }
+  .profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 { width: 1.5vw; }
+}
+@media (min-width: 1200px) {
+  .profile { height: 35vw; width: 35vw; }
+  .profile .profile-img { height: 40vw; }
+}
