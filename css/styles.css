@@ -606,6 +606,13 @@ progress {
   object-position: top;
 }
 
+.img-fluid {
+  min-width: 300px;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: top;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -11739,4 +11746,8 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+}
+#coffee {
+  width: 20vw;
+  height: 40vh;
 }
