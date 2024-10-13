@@ -1,6 +1,5 @@
 // 02/10/2024
-
-let projects = [
+const projects = [
   {
     link: 'http://florine.benard.osteo.free.fr',
     title: 'OsteoBooking',
@@ -74,7 +73,6 @@ projects.forEach(project => {
     project.tag_text);
 });
 
-
 function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text) {
 
 // Create project article
@@ -82,21 +80,22 @@ const article = document.createElement('article');
 article.classList.add('postcard', 'light', color);
 
 // Image link
-const link1 = document.createElement('a');
-link1.classList.add('postcard__img_link');
-link1.href = link;
-link1.target = '_blank';
+const imgLink = document.createElement('a');
+imgLink.classList.add('postcard__img_link');
+imgLink.href = link;
+imgLink.target = '_blank';
 
 const img = document.createElement('img');
 img.classList.add('postcard__img');
 img.src = image;
 img.alt = '...';
+img.loading = 'lazy';
 
-link1.appendChild(img);
+imgLink.appendChild(img);
 
 // Text content
-const textDiv1 = document.createElement('div');
-textDiv1.classList.add('postcard__text', 't-dark');
+const textDiv = document.createElement('div');
+textDiv.classList.add('postcard__text', 't-dark');
 
 // Title
 const title = document.createElement('h1');
@@ -105,6 +104,7 @@ title.classList.add('postcard__title', color);
 const titleLink = document.createElement('a');
 titleLink.href = link;
 titleLink.textContent = projectTitle;
+titleLink.target = '_blank';
 
 title.appendChild(titleLink);
 
@@ -123,8 +123,8 @@ time.appendChild(document.createTextNode(date));
 subtitle.appendChild(time);
 
 // Bar separator
-const bar1 = document.createElement('div');
-bar1.classList.add('postcard__bar');
+const bar = document.createElement('div');
+bar.classList.add('postcard__bar');
 
 // Preview text
 const previewText = document.createElement('div');
@@ -136,19 +136,19 @@ const tagList = document.createElement('ul');
 tagList.classList.add('postcard__tagbox');
 
 
-const tag3 = document.createElement('li');
-tag3.classList.add('tag__item', 'play', color);
+const tag = document.createElement('li');
+tag.classList.add('tag__item', 'play', color);
 const tag3Link = document.createElement('a');
 tag3Link.href = githubLink;
 tag3Link.type = 'button';
+tag3Link.target = '_blank';
 
 const github = document.createElement('i');
 github.classList.add('mr-2');
 github.textContent = 'Github';
-github.target = '_blank';
 
 tag3Link.appendChild(github);
-tag3.appendChild(tag3Link);
+tag.appendChild(tag3Link);
 
 tag_text.forEach(text => {
   const tag = document.createElement('li');
@@ -157,11 +157,10 @@ tag_text.forEach(text => {
   tagList.appendChild(tag);
 });
 
-tagList.appendChild(tag3);
+tagList.appendChild(tag);
 
 // Adding elements
-textDiv1.append(title, subtitle, bar1, previewText, tagList);
-article.append(link1, textDiv1);
-console.log(article);
+textDiv.append(title, subtitle, bar, previewText, tagList);
+article.append(imgLink, textDiv);
 document.querySelector(".container.py-2").appendChild(article);
 }
