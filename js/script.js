@@ -104,93 +104,118 @@ projects.forEach(project => {
 });
 
 function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text) {
+  const title = createTitle(color, link, projectTitle); // Title
+  const subtitle = createSubtitle(date); // Subtitle (Date)
+  const bar = createBarSeparator(); // Bar separator
+  const previewText = createPreviewText(description); // Preview text
+  const tagList = createTagList(color, githubLink, tag_text); // Tagbox
 
-// Create project article
-const article = document.createElement('article');
-article.classList.add('postcard', 'light', color);
+  const textDiv = createTextContent(); // Text content
+  const imgLink = createImgLink(link, image); // Image link
+  const article = createProjectArticle(color); // Create project article
 
-// Image link
-const imgLink = document.createElement('a');
-imgLink.classList.add('postcard__img_link');
-imgLink.href = link;
-imgLink.target = '_blank';
-
-const img = document.createElement('img');
-img.classList.add('postcard__img');
-img.src = image;
-img.alt = '...';
-img.loading = 'lazy';
-
-imgLink.appendChild(img);
-
-// Text content
-const textDiv = document.createElement('div');
-textDiv.classList.add('postcard__text', 't-dark');
-
-// Title
-const title = document.createElement('h1');
-title.classList.add('postcard__title', color);
-
-const titleLink = document.createElement('a');
-titleLink.href = link;
-titleLink.textContent = projectTitle;
-titleLink.target = '_blank';
-
-title.appendChild(titleLink);
-
-// Subtitle (Date)
-const subtitle = document.createElement('div');
-subtitle.classList.add('postcard__subtitle', 'small');
-
-const time = document.createElement('time');
-time.setAttribute('datetime', '2020-05-25 12:00:00');
-
-const icon1 = document.createElement('i');
-icon1.classList.add('mr-2');
-time.appendChild(icon1);
-time.appendChild(document.createTextNode(date));
-
-subtitle.appendChild(time);
-
-// Bar separator
-const bar = document.createElement('div');
-bar.classList.add('postcard__bar');
-
-// Preview text
-const previewText = document.createElement('div');
-previewText.classList.add('postcard__preview-txt');
-previewText.textContent = description;
-
-// Tagbox
-const tagList = document.createElement('ul');
-tagList.classList.add('postcard__tagbox');
-
-
-const tag = document.createElement('li');
-tag.classList.add('tag__item', 'play', color);
-const tag3Link = document.createElement('a');
-tag3Link.href = githubLink;
-tag3Link.type = 'button';
-tag3Link.target = '_blank';
-
-const github = document.createElement('i');
-github.classList.add('mr-2');
-github.textContent = 'Github';
-
-tag3Link.appendChild(github);
-tag.appendChild(tag3Link);
-
-tag_text.forEach(text => {
-  const tag = document.createElement('li');
-  tag.classList.add('tag__item');
-  tag.innerHTML = text;
-  tagList.appendChild(tag);
-});
-
-tagList.appendChild(tag);
-
-// Adding elements
-textDiv.append(title, subtitle, bar, previewText, tagList);
-article.append(imgLink, textDiv);
-document.querySelector(".container.py-2").appendChild(article);
+  textDiv.append(title, subtitle, bar, previewText, tagList);
+  article.append(imgLink, textDiv);
+  document.querySelector(".container.py-2").appendChild(article);
 }
+
+function createProjectArticle(color) {
+  const article = document.createElement('article');
+  article.classList.add('postcard', 'light', color);
+  return article;
+}
+
+function createPreviewText(description) {
+  const previewText = document.createElement('div');
+  previewText.classList.add('postcard__preview-txt');
+  previewText.textContent = description;
+  return previewText;
+}
+
+function createBarSeparator() {
+  const bar = document.createElement('div');
+  bar.classList.add('postcard__bar');
+  return bar;
+}
+
+function createTextContent() {
+  const textDiv = document.createElement('div');
+  textDiv.classList.add('postcard__text', 't-dark');
+  return textDiv;
+}
+
+function createTagList(color, githubLink, tag_text) {
+  const tagList = document.createElement('ul');
+  tagList.classList.add('postcard__tagbox');
+
+
+  const tag = document.createElement('li');
+  tag.classList.add('tag__item', 'play', color);
+  const tag3Link = document.createElement('a');
+  tag3Link.href = githubLink;
+  tag3Link.type = 'button';
+  tag3Link.target = '_blank';
+
+  const github = document.createElement('i');
+  github.classList.add('mr-2');
+  github.textContent = 'Github';
+
+  tag3Link.appendChild(github);
+  tag.appendChild(tag3Link);
+
+  tag_text.forEach(text => {
+    const tag = document.createElement('li');
+    tag.classList.add('tag__item');
+    tag.innerHTML = text;
+    tagList.appendChild(tag);
+  });
+
+  tagList.appendChild(tag);
+  return tagList;
+}
+
+function createSubtitle(date) {
+  const subtitle = document.createElement('div');
+  subtitle.classList.add('postcard__subtitle', 'small');
+
+  const time = document.createElement('time');
+  time.setAttribute('datetime', '2020-05-25 12:00:00');
+
+  const icon1 = document.createElement('i');
+  icon1.classList.add('mr-2');
+  time.appendChild(icon1);
+  time.appendChild(document.createTextNode(date));
+
+  subtitle.appendChild(time);
+  return subtitle;
+}
+
+function createTitle(color, link, projectTitle) {
+  const title = document.createElement('h1');
+  title.classList.add('postcard__title', color);
+
+  const titleLink = document.createElement('a');
+  titleLink.href = link;
+  titleLink.textContent = projectTitle;
+  titleLink.target = '_blank';
+
+  title.appendChild(titleLink);
+  return title;
+}
+
+function createImgLink(link, image) {
+  const imgLink = document.createElement('a');
+  imgLink.classList.add('postcard__img_link');
+  imgLink.href = link;
+  imgLink.target = '_blank';
+
+  const img = document.createElement('img');
+  img.classList.add('postcard__img');
+  img.src = image;
+  img.alt = '...';
+  img.loading = 'lazy';
+
+  imgLink.appendChild(img);
+  return imgLink;
+}
+
