@@ -92,6 +92,7 @@ const projects = [
   },
 ];
 
+createProjectsTitle();
 projects.forEach(project => {
   createProject(project.link, 
     project.title, 
@@ -102,6 +103,17 @@ projects.forEach(project => {
     project.githubLink,
     project.tag_text);
 });
+
+function createProjectsTitle() {
+  const title = document.createElement('div');
+  title.classList.add('container', 'py-2');
+  title.innerHTML = `<div class="text-center mb-5">
+                          <h2 class="display-5 fw-bolder mb-0">
+                              <span class="text-gradient d-inline">Projects</span>
+                          </h2>
+                      </div>`;
+  document.querySelector("#projects").appendChild(title);
+}
 
 function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text) {
   const title = createTitle(color, link, projectTitle); // Title
@@ -118,6 +130,7 @@ function createProject(link, projectTitle, description, date, image, color, gith
   article.append(imgLink, textDiv);
   document.querySelector(".container.py-2").appendChild(article);
 }
+
 
 function createProjectArticle(color) {
   const article = document.createElement('article');
@@ -179,7 +192,7 @@ function createSubtitle(date) {
   subtitle.classList.add('postcard__subtitle', 'small');
 
   const time = document.createElement('time');
-  time.setAttribute('datetime', '2020-05-25 12:00:00');
+  time.setAttribute('datetime', date);
 
   const icon1 = document.createElement('i');
   icon1.classList.add('mr-2');

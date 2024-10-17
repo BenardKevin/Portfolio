@@ -1,5 +1,4 @@
 // 02/10/2024
-
 var TxtRotate = function(el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
