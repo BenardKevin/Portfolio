@@ -156,3 +156,6 @@
   .yellow::before { background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%); }
   .yellow:nth-child(2n)::before { background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%); }
 }
+#tag_list button:hover {
+  font-weight: 700;
+}

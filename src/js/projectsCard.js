@@ -1,14 +1,14 @@
 // 02/10/2024
-const projects = [
+const PROJECTS_DATA = [
   {
     link: 'http://florine.benard.osteo.free.fr',
     title: 'OsteoBooking',
     description:'OsteoBooking is a simple and intuitive website made in Angular 17 allowing users to book osteopathy sessions online. This application offers a user-friendly interface for managing appointments for patients.',
-    date: 'Avr.2024',
+    date: 'Avr. 2024',
     image: 'OsteoBooking.png',
     color: 'green',
     githubLink: 'OsteoBooking',
-    tag_text: ['Website', 'Angular', 'TypeScript', 'Bootstrap', 'Nmp', 'Node.js'],
+    tag_text: ['Angular', 'TypeScript', 'Bootstrap', 'Webapp', 'Nmp', 'Node.js'],
   },
   {
     link: 'https://www.linkedin.com/posts/kbenard_mysql-tomcat-restsql-activity-6666987982819516416-02DL',
@@ -18,17 +18,17 @@ const projects = [
     image: 'StatsCOVID.jpg',
     color: 'red',
     githubLink: 'StatsCovid',
-    tag_text: ['Webapp', 'JavaScript', 'Tomcat', 'MySQL', 'RestSQL', 'SVG', 'JSON', 'HTML/CSS'],
+    tag_text: ['JavaScript', 'Tomcat', 'MySQL', 'RestSQL', 'Webapp', 'SVG', 'JSON', 'HTML/CSS'],
   },
   {
     link: 'https://github.com/BenardKevin/Ogre_Boulotteur',
     title: 'Ogre Boulotteur',
-    description:'This C program is a non-playable game concept where an Ogre "boulotte" children. The game logic is designed with arrays and loops, where the Ogre moves through a grid, "catching" children placed randomly. The focus is on the simulation of movement and interactions, using basic collision detection to trigger when the Ogre catches a child.',
+    description:'This C program is a simulation game where an Ogre "boulotte" children. The game logic is designed with arrays and loops, where the Ogre moves through a grid, "catching" children. The focus is on the simulation of movement and interactions, using basic collision detection to trigger when the Ogre catches a child.',
     date: 'Oct. 2018',
     image: 'Ogre_Boulotteur.png',
     color: 'blue',
     githubLink: 'OgreBoulotteur',
-    tag_text: ['Game', 'C', 'CodeBlocks'],
+    tag_text: ['C', 'Game', 'CodeBlocks'],
   },
   {
     link: 'https://benardkevin.github.io/GitHarvest/',
@@ -38,7 +38,7 @@ const projects = [
     image: 'GitHarvest.png',
     color: 'red',
     githubLink: 'GitHarvest',
-    tag_text: ['Website', 'JavaScript', 'API'],
+    tag_text: ['JavaScript', 'Website', 'API'],
   },
   {
     link: 'https://github.com/BenardKevin/CryptoSoft',
@@ -48,7 +48,7 @@ const projects = [
     image: 'EasySave.png',
     color: 'blue',
     githubLink: 'CryptoSoft',
-    tag_text: ['C#', 'UML', 'XAML', '.NET Core', 'WPF', 'Visual Studio', 'Azure DevOps'],
+    tag_text: ['C#', 'UML', 'XAML', '.NET Core', 'WPF', 'Software', 'Visual Studio', 'Azure DevOps'],
   },
   {
     link: 'https://github.com/BenardKevin/SolidarityBond',
@@ -58,7 +58,7 @@ const projects = [
     image: 'future_imperfect.png',
     color: 'green',
     githubLink: 'SolidarityBond',
-    tag_text: ['Webapp', 'PHP', 'Laravel', 'SQL', 'HTML/CSS', 'Visual Studio Code'],
+    tag_text: ['PHP', 'Laravel', 'SQL', 'Webapp', 'Visual Studio Code'],
   },
   {
     link: 'https://github.com/BenardKevin/FlightManagement',
@@ -68,14 +68,17 @@ const projects = [
     image: 'FlightManagement.png',
     color: 'yellow',
     githubLink: 'FlightManagement',
-    tag_text: ['Software', 'Java', 'SQL', 'UML', 'Eclipse', 'WampServer', 'MySQL'],
+    tag_text: ['Java', 'SQL', 'UML', 'Eclipse', 'Software', 'WampServer', 'MySQL'],
   },
 ];
-const repo_url = 'https://github.com/BenardKevin/';
-const assets_url = 'src/assets/';
+const CONFIG = {
+  repo_url: 'https://github.com/BenardKevin/',
+  assets_url: 'src/assets/'
+};
 
-createProjectsTitle();
-projects.forEach(project => {
+// INIT
+createProjectTitle();
+PROJECTS_DATA.forEach(project => {
   createProject(project.link, 
     project.title, 
     project.description, 
@@ -86,89 +89,105 @@ projects.forEach(project => {
     project.tag_text);
 });
 
-function createProjectsTitle() {
-  const title = document.createElement('div');
-  title.classList.add('container', 'py-2');
-  title.innerHTML = `<div class="text-center mb-5">
-                          <h2 class="display-5 fw-bolder mb-0">
-                              <span class="text-gradient d-inline">Projects</span>
-                          </h2>
-                      </div>`;
-  document.querySelector("#projects").appendChild(title);
+
+
+
+function articlesSelection(data) {
+  clearProjects(); 
+
+  if (!data || data === 'all') {
+    PROJECTS_DATA.forEach(project => {
+      createProject(project.link, project.title, project.description, project.date, project.image, project.color, project.githubLink, project.tag_text);
+    });
+  } else {
+    PROJECTS_DATA.forEach(project => {
+      const tagsLowerCase = project.tag_text.map(tag => tag.toLowerCase());
+      if (tagsLowerCase.includes(data)) {
+        createProject(project.link, project.title, project.description, project.date, project.image, project.color, project.githubLink, project.tag_text);
+      }
+    });
+  }
 }
-
-function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text) {
-  const title = createTitle(color, link, projectTitle); // Title
-  const subtitle = createSubtitle(date); // Subtitle (Date)
-  const bar = createBarSeparator(); // Bar separator
-  const previewText = createPreviewText(description); // Preview text
-  const tagList = createTagList(color, githubLink, tag_text); // Tagbox
-
-  const textDiv = createTextContent(); // Text content
-  const imgLink = createImgLink(link, image); // Image link
-  const article = createProjectArticle(color); // Create project article
-
-  textDiv.append(title, subtitle, bar, previewText, tagList);
-  article.append(imgLink, textDiv);
-  document.querySelector(".container.py-2").appendChild(article);
-}
-
-
-function createProjectArticle(color) {
-  const article = document.createElement('article');
-  article.classList.add('postcard', 'light', color, 'mb-5');
-  return article;
-}
-
-function createPreviewText(description) {
-  const previewText = document.createElement('div');
-  previewText.classList.add('postcard__preview-txt');
-  previewText.textContent = description;
-  return previewText;
-}
-
-function createBarSeparator() {
-  const bar = document.createElement('div');
-  bar.classList.add('postcard__bar');
-  return bar;
-}
-
-function createTextContent() {
-  const textDiv = document.createElement('div');
-  textDiv.classList.add('postcard__text', 't-dark');
-  return textDiv;
-}
-
-function createTagList(color, githubLink, tag_text) {
-  const tagList = document.createElement('ul');
-  tagList.classList.add('postcard__tagbox');
-
-  const tag = document.createElement('li');
-  tag.classList.add('tag__item', 'play', color);
-  const tag3Link = document.createElement('a');
-  tag3Link.href = repo_url + githubLink;
-  tag3Link.type = 'button';
-  tag3Link.target = '_blank';
-
-  const github = document.createElement('i');
-  github.classList.add('mr-2');
-  github.textContent = 'Github';
-
-  tag3Link.appendChild(github);
-  tag.appendChild(tag3Link);
-
-  tag_text.forEach(text => {
-    const tag = document.createElement('li');
-    tag.classList.add('tag__item', text.split(' ').join('_'));
-    tag.innerHTML = text;
-    tagList.appendChild(tag);
+function clearProjects() {
+  const container = document.querySelector(".container.py-2");
+  const postcards = container.querySelectorAll('.postcard');
+  
+  postcards.forEach(postcard => {
+    container.removeChild(postcard); 
   });
-
-  tagList.appendChild(tag);
-  return tagList;
 }
 
-function createSubtitle(date) {
+
+
+// Créer le titre de section
+function createProjectTitle() {
+  const title_text = document.createElement('span');
+  title_text.classList.add('text-gradient', 'd-inline');
+  title_text.textContent = 'Projects';
+
+  const title = document.createElement('h2');
+  title.classList.add('display-5', 'fw-bolder', 'mb-0');
+  title.appendChild(title_text);
+
+  const div = document.createElement('div');
+  div.classList.add('text-center', 'mb-4');
+  div.appendChild(title);
+
+  const subtitle_text = document.createElement('p');
+  subtitle_text.classList.add('text-center', 'mb-5');
+  subtitle_text.innerHTML = `
+  <ul id="tag_list" class="list-unstyled">
+    <li class="d-inline"><button class="fw-bold text-uppercase border-0 mixitup-control-active d-inline" data-filter="all">All</button></li>
+    <li class="d-inline user-select-none">|</li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="javascript">JavaScript</button></li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="java">Java</button></li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="angular">Angular</button></li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="c">C</button></li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="c#">C#</button></li>
+    <li class="d-inline user-select-none">|</li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="website">Website</button></li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="webapp">Webapp</button></li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="software">Software</button></li>
+    <li class="d-inline"><button class="text-uppercase border-0" data-filter="game">Game</button></li>
+  </ul>
+  `;
+
+  const subtitle = document.createElement('div');
+  subtitle.classList.add('text-center', 'd-inline', 'mb-5');
+  subtitle.appendChild(subtitle_text);
+
+  const projects_container = document.createElement('div');
+  projects_container.classList.add('container', 'py-2');
+  projects_container.append(div, subtitle);
+
+
+  const projects_section = document.querySelector("#projects");
+  projects_section.appendChild(projects_container);
+
+  const buttons = document.querySelectorAll('#tag_list button');
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('fw-bold'));
+      this.classList.add('fw-bold');
+      const filterValue = this.getAttribute('data-filter');
+      articlesSelection(filterValue);
+    });
+  });
+}
+
+// Créer un projet
+function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text) {
+  const title = document.createElement('h1');
+  title.classList.add('postcard__title', color);
+
+  const titleLink = document.createElement('a');
+  titleLink.href = link;
+  titleLink.textContent = projectTitle;
+  titleLink.target = '_blank';
+
+  title.appendChild(titleLink);
+  
+  
   const subtitle = document.createElement('div');
   subtitle.classList.add('postcard__subtitle', 'small');
 
@@ -181,23 +200,48 @@ function createSubtitle(date) {
   time.appendChild(document.createTextNode(date));
 
   subtitle.appendChild(time);
-  return subtitle;
-}
+  
 
-function createTitle(color, link, projectTitle) {
-  const title = document.createElement('h1');
-  title.classList.add('postcard__title', color);
+  const bar = document.createElement('div');
+  bar.classList.add('postcard__bar');
+  
+  
+  const previewText = document.createElement('div');
+  previewText.classList.add('postcard__preview-txt');
+  previewText.textContent = description;
+  
+  
+  const tagList = document.createElement('ul');
+  tagList.classList.add('postcard__tagbox');
 
-  const titleLink = document.createElement('a');
-  titleLink.href = link;
-  titleLink.textContent = projectTitle;
-  titleLink.target = '_blank';
+  const tag = document.createElement('li');
+  tag.classList.add('tag__item', 'play', color);
+  const tag3Link = document.createElement('a');
+  tag3Link.href = CONFIG.repo_url + githubLink;
+  tag3Link.type = 'button';
+  tag3Link.target = '_blank';
 
-  title.appendChild(titleLink);
-  return title;
-}
+  const github = document.createElement('i');
+  github.classList.add('mr-2');
+  github.textContent = 'Github';
 
-function createImgLink(link, image) {
+  tag3Link.appendChild(github);
+  tag.appendChild(tag3Link);
+
+  tag_text.forEach(text => {
+    const tag = document.createElement('li');
+    tag.classList.add('tag__item');
+    tag.innerHTML = text;
+    tagList.appendChild(tag);
+  });
+
+  tagList.appendChild(tag);
+
+
+  const textDiv = document.createElement('div');
+  textDiv.classList.add('postcard__text', 't-dark');
+ 
+
   const imgLink = document.createElement('a');
   imgLink.classList.add('postcard__img_link');
   imgLink.href = link;
@@ -205,11 +249,22 @@ function createImgLink(link, image) {
 
   const img = document.createElement('img');
   img.classList.add('postcard__img');
-  img.src = assets_url + image;
+  img.src = CONFIG.assets_url + image;
   img.alt = '...';
   img.loading = 'lazy';
 
   imgLink.appendChild(img);
-  return imgLink;
+
+
+  const article = document.createElement('article');
+  article.classList.add('postcard', 'light', color, 'mb-5');
+  tag_text.forEach(text => {
+    article.classList.add(text.toLowerCase().split(' ').join('_'));
+  });
+
+
+  textDiv.append(title, subtitle, bar, previewText, tagList);
+  article.append(imgLink, textDiv);
+  document.querySelector(".container.py-2").appendChild(article);
 }
 
