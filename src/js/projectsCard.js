@@ -3,94 +3,76 @@ const projects = [
   {
     link: 'http://florine.benard.osteo.free.fr',
     title: 'OsteoBooking',
-    description:'OsteoBooking is a simple and intuitive web application made in Angular17 allowing users to book osteopathy sessions online. This application offers a user-friendly interface for managing appointments for patients.',
-    date: 'May 2024',
-    image: 'assets/OsteoBooking.png',
+    description:'OsteoBooking is a simple and intuitive website made in Angular 17 allowing users to book osteopathy sessions online. This application offers a user-friendly interface for managing appointments for patients.',
+    date: 'Avr.2024',
+    image: 'OsteoBooking.png',
     color: 'green',
-    githubLink: 'https://github.com/BenardKevin/OsteoBooking',
-    tag_text: ['Website', 'Angular 17', 'Typescript', 'Bootstrap'],
+    githubLink: 'OsteoBooking',
+    tag_text: ['Website', 'Angular', 'TypeScript', 'Bootstrap', 'Nmp', 'Node.js'],
   },
   {
     link: 'https://www.linkedin.com/posts/kbenard_mysql-tomcat-restsql-activity-6666987982819516416-02DL',
     title: 'StatsCOVID',
     description:'Javascript web application focused on the evolution of Covid19 in France. It presents statistics in the form of a dashboard with maps, lists, graphs, kpi...',
-    date: 'April 2020',
-    image: 'assets/StatsCOVID.jpg',
+    date: 'Apr. 2020',
+    image: 'StatsCOVID.jpg',
     color: 'red',
-    githubLink: 'https://github.com/BenardKevin/StatsCovid',
-    tag_text: ['Webapp', 'Tomcat', 'JavaScript', 'SVG', 'JSON', 'HTML/CSS', 'MySQL', 'RestSQL'],
+    githubLink: 'StatsCovid',
+    tag_text: ['Webapp', 'JavaScript', 'Tomcat', 'MySQL', 'RestSQL', 'SVG', 'JSON', 'HTML/CSS'],
   },
   {
     link: 'https://github.com/BenardKevin/Ogre_Boulotteur',
     title: 'Ogre Boulotteur',
     description:'This C program is a non-playable game concept where an Ogre "boulotte" children. The game logic is designed with arrays and loops, where the Ogre moves through a grid, "catching" children placed randomly. The focus is on the simulation of movement and interactions, using basic collision detection to trigger when the Ogre catches a child.',
     date: 'Oct. 2018',
-    image: 'assets/Ogre_Boulotteur.png',
+    image: 'Ogre_Boulotteur.png',
     color: 'blue',
-    githubLink: 'https://github.com/BenardKevin/OgreBoulotteur',
-    tag_text: ['Game', 'C'],
+    githubLink: 'OgreBoulotteur',
+    tag_text: ['Game', 'C', 'CodeBlocks'],
   },
   {
     link: 'https://benardkevin.github.io/GitHarvest/',
     title: 'GitHarvest',
     description:'This project is a JavaScript-based application designed for a user management agency. The purpose is to retrieve and display users informations from GitHub\'s public API. The app fetches and shows details of 8 users at a time, including their profile picture, username, and a description (bio).',
     date: 'Oct. 2024',
-    image: 'assets/GitHarvest.png',
+    image: 'GitHarvest.png',
     color: 'red',
-    githubLink: 'https://github.com/BenardKevin/GitHarvest',
-    tag_text: ['Webapp', 'JavaScript', 'API'],
-  },
-  {
-    link: 'https://benardkevin.github.io/Accounting-Console',
-    title: 'Accounting Console',
-    description:'A JavaScript webtool that allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. It typically consists of an HTML structure for the user interface, CSS for styling, and JavaScript to handle the logic and functionality.',
-    date: 'Sept. 2024',
-    image: 'assets/Accounting-Console.png',
-    color: 'yellow',
-    githubLink: 'https://github.com/BenardKevin/Accounting-Console',
-    tag_text: ['Webtool', 'JavaScript'],
-  },
-  {
-    link: 'https://benardkevin.github.io/Model-based-website/',
-    title: 'Model-based website',
-    description:'This simple static web page, crafted using HTML and CSS only, showcases a clean and professional design. It features a structured layout with a header, navigation bar, main content area, and footer, all styled to create a cohesive and visually appealing user experience.',
-    date: 'Sept. 2024',
-    image: 'assets/future_imperfect.png',
-    color: 'blue',
-    githubLink: 'https://github.com/BenardKevin/Model-based-website',
-    tag_text: ['Website', 'HTML', 'CSS'],
+    githubLink: 'GitHarvest',
+    tag_text: ['Website', 'JavaScript', 'API'],
   },
   {
     link: 'https://github.com/BenardKevin/CryptoSoft',
     title: 'Data backup software',
     description:'File backup and encryption.',
-    date: '11/2020 - 12/2020',
-    image: 'assets/EasySave.png',
-    color: 'red',
-    githubLink: 'https://github.com/BenardKevin/CryptoSoft',
+    date: 'Nov. 2020',
+    image: 'EasySave.png',
+    color: 'blue',
+    githubLink: 'CryptoSoft',
     tag_text: ['C#', 'UML', 'XAML', '.NET Core', 'WPF', 'Visual Studio', 'Azure DevOps'],
   },
   {
     link: 'https://github.com/BenardKevin/SolidarityBond',
     title: 'SolidarityBond',
     description:'Covid-19 humanitarian PHP website for mask purchases via Paypal.',
-    date: '06/2020 - 07/2020',
-    image: 'assets/future_imperfect.png',
+    date: 'Jun. 2020',
+    image: 'future_imperfect.png',
     color: 'green',
-    githubLink: 'https://github.com/BenardKevin/SolidarityBond',
-    tag_text: ['PHP', 'Laravel', 'SQL', 'HTML/CSS', 'Visual Studio Code'],
+    githubLink: 'SolidarityBond',
+    tag_text: ['Webapp', 'PHP', 'Laravel', 'SQL', 'HTML/CSS', 'Visual Studio Code'],
   },
   {
     link: 'https://github.com/BenardKevin/FlightManagement',
     title: 'Flight management software',
     description:'Flight management application with JAVA.',
-    date: '07/2019 - 10/2019',
-    image: 'assets/FlightManagement.png',
+    date: 'Jul. 2019',
+    image: 'FlightManagement.png',
     color: 'yellow',
-    githubLink: 'https://github.com/BenardKevin/FlightManagement',
-    tag_text: ['JAVA8', 'SQL', 'UML', 'Eclipse', 'WampServer', 'MySQL'],
+    githubLink: 'FlightManagement',
+    tag_text: ['Software', 'Java', 'SQL', 'UML', 'Eclipse', 'WampServer', 'MySQL'],
   },
 ];
+const repo_url = 'https://github.com/BenardKevin/';
+const assets_url = 'src/assets/';
 
 createProjectsTitle();
 projects.forEach(project => {
@@ -134,7 +116,7 @@ function createProject(link, projectTitle, description, date, image, color, gith
 
 function createProjectArticle(color) {
   const article = document.createElement('article');
-  article.classList.add('postcard', 'light', color);
+  article.classList.add('postcard', 'light', color, 'mb-5');
   return article;
 }
 
@@ -161,11 +143,10 @@ function createTagList(color, githubLink, tag_text) {
   const tagList = document.createElement('ul');
   tagList.classList.add('postcard__tagbox');
 
-
   const tag = document.createElement('li');
   tag.classList.add('tag__item', 'play', color);
   const tag3Link = document.createElement('a');
-  tag3Link.href = githubLink;
+  tag3Link.href = repo_url + githubLink;
   tag3Link.type = 'button';
   tag3Link.target = '_blank';
 
@@ -178,7 +159,7 @@ function createTagList(color, githubLink, tag_text) {
 
   tag_text.forEach(text => {
     const tag = document.createElement('li');
-    tag.classList.add('tag__item');
+    tag.classList.add('tag__item', text.split(' ').join('_'));
     tag.innerHTML = text;
     tagList.appendChild(tag);
   });
@@ -224,7 +205,7 @@ function createImgLink(link, image) {
 
   const img = document.createElement('img');
   img.classList.add('postcard__img');
-  img.src = image;
+  img.src = assets_url + image;
   img.alt = '...';
   img.loading = 'lazy';
 

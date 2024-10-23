@@ -1,10 +1,23 @@
+html {
+  height: 100vh;
+  perspective: 100px;
+}
 body {
   font-family: "Baloo 2", cursive;
   font-size: 16px;
   text-rendering: optimizeLegibility;
   font-weight: initial;
 }
-
+main {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+section {
+  scroll-snap-align: start;
+}
 .dark {
   background: #110f16;
 }
