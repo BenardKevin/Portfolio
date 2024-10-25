@@ -18,7 +18,7 @@ const PROJECTS_DATA = [
     image: 'StatsCOVID.jpg',
     color: 'red',
     githubLink: 'StatsCovid',
-    tag_text: ['JavaScript', 'Tomcat', 'MySQL', 'RestSQL', 'Webapp', 'SVG', 'JSON', 'HTML/CSS'],
+    tag_text: ['JavaScript', 'Tomcat', 'MySQL', 'RestSQL', 'Webapp', 'SVG', 'JSON', 'SQL'],
   },
   {
     link: 'https://github.com/BenardKevin/Ogre_Boulotteur',
@@ -43,7 +43,7 @@ const PROJECTS_DATA = [
   {
     link: 'https://github.com/BenardKevin/CryptoSoft',
     title: 'Data backup software',
-    description:'File backup and encryption.',
+    description:'EasySave is a file backup and encryption tool built with C#, .NET Core, and WPF. It features a user-friendly interface designed with XAML and is developed in Visual Studio. Integrated with Azure DevOps for seamless project management, EasySave ensures secure backups and encryption, with UML used for system design.',
     date: 'Nov. 2020',
     image: 'EasySave.png',
     color: 'blue',
@@ -53,7 +53,7 @@ const PROJECTS_DATA = [
   {
     link: 'https://github.com/BenardKevin/SolidarityBond',
     title: 'SolidarityBond',
-    description:'Covid-19 humanitarian PHP website for mask purchases via Paypal.',
+    description:'A simple COVID-19 humanitarian website built with PHP, Laravel, and SQL for purchasing masks securely via PayPal. Developed in Visual Studio Code, it ensures easy navigation and safe transactions.',
     date: 'Jun. 2020',
     image: 'future_imperfect.png',
     color: 'green',
@@ -63,7 +63,7 @@ const PROJECTS_DATA = [
   {
     link: 'https://github.com/BenardKevin/FlightManagement',
     title: 'Flight management software',
-    description:'Flight management application with JAVA.',
+    description:'FlightManagement is a software built with Java and SQL, designed using UML and developed in Eclipse. It uses MySQL databases hosted on WampServer to manage flight bookings, schedules, and customer data efficiently.',
     date: 'Jul. 2019',
     image: 'FlightManagement.png',
     color: 'yellow',
@@ -117,13 +117,10 @@ function clearProjects() {
   });
 }
 
-
-
-// Créer le titre de section
 function createProjectTitle() {
   const title_text = document.createElement('span');
   title_text.classList.add('text-gradient', 'd-inline');
-  title_text.textContent = 'Projects';
+  title_text.textContent = 'My creations';
 
   const title = document.createElement('h2');
   title.classList.add('display-5', 'fw-bolder', 'mb-0');
@@ -137,18 +134,18 @@ function createProjectTitle() {
   subtitle_text.classList.add('text-center', 'mb-5');
   subtitle_text.innerHTML = `
   <ul id="tag_list" class="list-unstyled">
-    <li class="d-inline"><button class="fw-bold text-uppercase border-0 mixitup-control-active d-inline" data-filter="all">All</button></li>
+    <li class="d-inline"><button class="bg-transparent fw-bold text-uppercase border-0 mixitup-control-active d-inline" data-filter="all">All</button></li>
     <li class="d-inline user-select-none">|</li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="javascript">JavaScript</button></li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="java">Java</button></li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="angular">Angular</button></li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="c">C</button></li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="c#">C#</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" style="background-color: none" data-filter="javascript">JavaScript</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="java">Java</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="angular">Angular</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="sql">SQL</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="c#">C#</button></li>
     <li class="d-inline user-select-none">|</li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="website">Website</button></li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="webapp">Webapp</button></li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="software">Software</button></li>
-    <li class="d-inline"><button class="text-uppercase border-0" data-filter="game">Game</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="website">Website</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="webapp">Webapp</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="software">Software</button></li>
+    <li class="d-inline"><button class="bg-transparent text-uppercase border-0" data-filter="game">Game</button></li>
   </ul>
   `;
 
@@ -175,7 +172,6 @@ function createProjectTitle() {
   });
 }
 
-// Créer un projet
 function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text) {
   const title = document.createElement('h1');
   title.classList.add('postcard__title', color);
