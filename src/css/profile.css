@@ -1,25 +1,30 @@
-.profile {
-  height: 75vw;
-  width: 75vw;
-  border-radius: 5vw;
-  margin-top: 5vw;
-  max-height: 40rem;
-  max-width: 40rem;
+/* COLORS */
+@media (prefers-color-scheme: light) {
+  :root {
+    --profile-dots-inside : #fff;
+    --profile-dot-left : #1e30f3;
+    --profile-dot-right : #e21e1e;
+  }
 }
-.profile .profile-img {
-  height: 80vw;
-  max-height: 45rem;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --profile-dots-inside : #000;
+    --profile-dot-left : #1e30f3;
+    --profile-dot-right : #e21e1e;
+  }
 }
+
+.profile .dots-1 svg, .profile .dots-3 svg { fill: var(--profile-dots-inside); }
+.profile .dots-4 svg { fill: var(--profile-dot-left); } 
+.profile .dots-2 svg { fill: var(--profile-dot-right); }
+
+.profile { height: 75vw; width: 75vw; border-radius: 5vw; margin-top: 5vw; max-height: 40rem; max-width: 40rem; }
+.profile .profile-img { height: 80vw; max-height: 45rem; bottom: 0; left: 50%; transform: translateX(-50%); }
 .profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 {width: 3vw;}
 .profile .dots-1 { right: 1.5vw; top: 4vw; }
 .profile .dots-2 { right: -4vw; top: 6.05vw; }
 .profile .dots-3 { left: 1.5vw; bottom: 6.05vw; }
 .profile .dots-4 { left: -4vw; bottom: 4vw; }
-.profile .dots-1 svg, .profile .dots-3 svg { fill: #fff; }
-.profile .dots-2 svg, .profile .dots-4 svg { fill: #1e30f3; }
 
 @media (min-width: 576px) {
   .profile { height: 58vw; width: 60vw; }

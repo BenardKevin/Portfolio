@@ -1,6 +1,7 @@
 // 02/10/2024
 const PROJECTS_DATA = [
   {
+    name: 'osteobooking',
     link: 'http://florine.benard.osteo.free.fr',
     title: 'OsteoBooking',
     description:'OsteoBooking is a simple and intuitive website made in Angular 17 allowing users to book osteopathy sessions online. This application offers a user-friendly interface for managing appointments for patients.',
@@ -11,6 +12,7 @@ const PROJECTS_DATA = [
     tag_text: ['Angular', 'TypeScript', 'Bootstrap', 'Webapp', 'Nmp', 'Node.js'],
   },
   {
+    name: 'statscovid',
     link: 'https://www.linkedin.com/posts/kbenard_mysql-tomcat-restsql-activity-6666987982819516416-02DL',
     title: 'StatsCOVID',
     description:'Javascript web application focused on the evolution of Covid19 in France. It presents statistics in the form of a dashboard with maps, lists, graphs, kpi...',
@@ -21,19 +23,10 @@ const PROJECTS_DATA = [
     tag_text: ['JavaScript', 'Tomcat', 'MySQL', 'RestSQL', 'Webapp', 'SVG', 'JSON', 'SQL'],
   },
   {
-    link: 'https://github.com/BenardKevin/Ogre_Boulotteur',
-    title: 'Ogre Boulotteur',
-    description:'This C program is a simulation game where an Ogre "boulotte" children. The game logic is designed with arrays and loops, where the Ogre moves through a grid, "catching" children. The focus is on the simulation of movement and interactions, using basic collision detection to trigger when the Ogre catches a child.',
-    date: 'Oct. 2018',
-    image: 'Ogre_Boulotteur.png',
-    color: 'blue',
-    githubLink: 'OgreBoulotteur',
-    tag_text: ['C', 'Game', 'CodeBlocks'],
-  },
-  {
+    name: 'githarvest',
     link: 'https://benardkevin.github.io/GitHarvest/',
     title: 'GitHarvest',
-    description:'This project is a JavaScript-based application designed for a user management agency. The purpose is to retrieve and display users informations from GitHub\'s public API. The app fetches and shows details of 8 users at a time, including their profile picture, username, and a description (bio).',
+    description:'This project is a JavaScript-based application designed for a user management agency. The purpose is to retrieve and display users informations from GitHub\'s public API. The app fetches and shows details of 8 users at a time, including their profile picture, username, and a bio.',
     date: 'Oct. 2024',
     image: 'GitHarvest.png',
     color: 'red',
@@ -41,6 +34,7 @@ const PROJECTS_DATA = [
     tag_text: ['JavaScript', 'Website', 'API'],
   },
   {
+    name: 'easysave',
     link: 'https://github.com/BenardKevin/CryptoSoft',
     title: 'Data backup software',
     description:'EasySave is a file backup and encryption tool built with C#, .NET Core, and WPF. It features a user-friendly interface designed with XAML and is developed in Visual Studio. Integrated with Azure DevOps for seamless project management, EasySave ensures secure backups and encryption, with UML used for system design.',
@@ -51,6 +45,7 @@ const PROJECTS_DATA = [
     tag_text: ['C#', 'UML', 'XAML', '.NET Core', 'WPF', 'Software', 'Visual Studio', 'Azure DevOps'],
   },
   {
+    name: 'solidaritybond',
     link: 'https://github.com/BenardKevin/SolidarityBond',
     title: 'SolidarityBond',
     description:'A simple COVID-19 humanitarian website built with PHP, Laravel, and SQL for purchasing masks securely via PayPal. Developed in Visual Studio Code, it ensures easy navigation and safe transactions.',
@@ -61,6 +56,7 @@ const PROJECTS_DATA = [
     tag_text: ['PHP', 'Laravel', 'SQL', 'Webapp', 'Visual Studio Code'],
   },
   {
+    name: 'flightmanagement',
     link: 'https://github.com/BenardKevin/FlightManagement',
     title: 'Flight management software',
     description:'FlightManagement is a software built with Java and SQL, designed using UML and developed in Eclipse. It uses MySQL databases hosted on WampServer to manage flight bookings, schedules, and customer data efficiently.',
@@ -70,6 +66,17 @@ const PROJECTS_DATA = [
     githubLink: 'FlightManagement',
     tag_text: ['Java', 'SQL', 'UML', 'Eclipse', 'Software', 'WampServer', 'MySQL'],
   },
+  {
+    name: 'ogreboulotteur',
+    link: 'https://github.com/BenardKevin/Ogre_Boulotteur',
+    title: 'Ogre Boulotteur',
+    description:'This C program is a simulation game where an Ogre "boulotte" children. The game logic is designed with arrays and loops, where the Ogre moves through a grid, "catching" children. The focus is on the simulation of movement and interactions, using basic collision detection to trigger when the Ogre catches a child.',
+    date: 'Oct. 2018',
+    image: 'Ogre_Boulotteur.png',
+    color: 'purple',
+    githubLink: 'OgreBoulotteur',
+    tag_text: ['C', 'Game', 'CodeBlocks'],
+  },
 ];
 const CONFIG = {
   repo_url: 'https://github.com/BenardKevin/',
@@ -77,7 +84,7 @@ const CONFIG = {
 };
 
 // INIT
-createProjectTitle();
+createTitleSection();
 PROJECTS_DATA.forEach(project => {
   createProject(project.link, 
     project.title, 
@@ -86,11 +93,9 @@ PROJECTS_DATA.forEach(project => {
     project.image, 
     project.color, 
     project.githubLink,
-    project.tag_text);
+    project.tag_text,
+    project.name);
 });
-
-
-
 
 function articlesSelection(data) {
   clearProjects(); 
@@ -108,8 +113,9 @@ function articlesSelection(data) {
     });
   }
 }
+
 function clearProjects() {
-  const container = document.querySelector(".container.py-2");
+  const container = document.querySelector(".container.my-5");
   const postcards = container.querySelectorAll('.postcard');
   
   postcards.forEach(postcard => {
@@ -117,10 +123,10 @@ function clearProjects() {
   });
 }
 
-function createProjectTitle() {
+function createTitleSection() {
   const title_text = document.createElement('span');
-  title_text.classList.add('text-gradient', 'd-inline');
-  title_text.textContent = 'My creations';
+  title_text.classList.add('text-gradient', 'd-inline', 'my-5');
+  title_text.setAttribute("id", "project_title");
 
   const title = document.createElement('h2');
   title.classList.add('display-5', 'fw-bolder', 'mb-0');
@@ -154,7 +160,7 @@ function createProjectTitle() {
   subtitle.appendChild(subtitle_text);
 
   const projects_container = document.createElement('div');
-  projects_container.classList.add('container', 'py-2');
+  projects_container.classList.add('container', 'my-5');
   projects_container.append(div, subtitle);
 
 
@@ -172,7 +178,7 @@ function createProjectTitle() {
   });
 }
 
-function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text) {
+function createProject(link, projectTitle, description, date, image, color, githubLink, tag_text, name) {
   const title = document.createElement('h1');
   title.classList.add('postcard__title', color);
 
@@ -204,11 +210,12 @@ function createProject(link, projectTitle, description, date, image, color, gith
   
   const previewText = document.createElement('div');
   previewText.classList.add('postcard__preview-txt');
+  previewText.setAttribute('id', name);
   previewText.textContent = description;
   
   
   const tagList = document.createElement('ul');
-  tagList.classList.add('postcard__tagbox');
+  tagList.classList.add('postcard__tagbox', 'd-flex');
 
   const tag = document.createElement('li');
   tag.classList.add('tag__item', 'play', color);
@@ -244,7 +251,7 @@ function createProject(link, projectTitle, description, date, image, color, gith
   imgLink.target = '_blank';
 
   const img = document.createElement('img');
-  img.classList.add('postcard__img');
+  img.classList.add('postcard__img', 'position-relative');
   img.src = CONFIG.assets_url + image;
   img.alt = '...';
   img.loading = 'lazy';
@@ -253,7 +260,7 @@ function createProject(link, projectTitle, description, date, image, color, gith
 
 
   const article = document.createElement('article');
-  article.classList.add('postcard', 'light', color, 'mb-5');
+  article.classList.add('postcard', color, 'mb-5', 'd-flex', 'position-relative', 'overflow-hidden');
   tag_text.forEach(text => {
     article.classList.add(text.toLowerCase().split(' ').join('_'));
   });
@@ -261,6 +268,21 @@ function createProject(link, projectTitle, description, date, image, color, gith
 
   textDiv.append(title, subtitle, bar, previewText, tagList);
   article.append(imgLink, textDiv);
-  document.querySelector(".container.py-2").appendChild(article);
+  document.querySelector(".container.my-5").appendChild(article);
 }
 
+document.getElementById('nav_projects').addEventListener('click', function(event) {
+  event.preventDefault();
+  const section = document.getElementById('projects');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+
+document.getElementById('button_projects').addEventListener('click', function(event) {
+  event.preventDefault();
+  const section = document.getElementById('projects');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});

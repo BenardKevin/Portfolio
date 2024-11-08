@@ -1,57 +1,41 @@
-html {
-  height: 100vh;
-  perspective: 100px;
+/* COLORS */
+:root {
+  --theme-left: #1e30f3;
+  --theme-right: #e21e1e;
 }
-body {
-  font-family: "Baloo 2", cursive;
-  font-size: 16px;
-  text-rendering: optimizeLegibility;
-  font-weight: initial;
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-theme: url(../assets/background-white.png);
+    --text-color: #110f16;
+    --text-color-muted: #6c757d;
+  }
 }
-main {
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: overlay;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-theme: url(../assets/background-black.png);
+    --text-color: #f3f5f7;
+    --text-color-muted: #b0bfcc;
+    --text-color-hover: #d9d9d9;
+  }
 }
-section {
-  scroll-snap-align: start;
-}
-.dark {
-  background: #110f16;
-}
+body { background: var(--background-theme); color: var(--text-color); }
+p, .btn, button { color: var(--text-color) !important; }
+a, span { color: var(--text-color-muted) !important; }
+.btn-outline-dark { border-color: var(--text-color);}
+a:hover { color: var(--text-color-hover) !important; }
+.bg-gradient-primary-to-secondary { background: linear-gradient(135deg, var(--theme-left) 0%, var(--theme-right) 100%); }
+.text-gradient { background: -webkit-linear-gradient(315deg, var(--theme-left) 0%, var(--theme-right) 100%); }
 
-.light {
-  background: #f3f5f7;
-}
+html { height: 100vh; perspective: 100px; }
+body { font-family: "Baloo 2", cursive; font-size: 16px; text-rendering: optimizeLegibility; font-weight: initial; }  
+main, #projects { overflow-y: overlay; scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+nav, section, footer { scroll-snap-align: start; }
+article { scroll-snap-align: center; }
+a, a:hover { text-decoration: none; transition: color 0.3s ease-in-out; }
+.check-dark { width: 1.6rem; height: 1.6rem; vertical-align: bottom; }
 
-a,
-a:hover {
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
+.text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.rounded-4 { border-radius: 1rem !important; }
+.feature { display: inline-flex; align-items: center; justify-content: center; height: 3rem; width: 3rem; font-size: 1.5rem; }
 
-.bg-gradient-primary-to-secondary {
-  background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
-}
-
-.text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.rounded-4 {
-  border-radius: 1rem !important;
-}
-
-.feature {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
-  width: 3rem;
-  font-size: 1.5rem;
-}
+.key { font-weight: bold; }
