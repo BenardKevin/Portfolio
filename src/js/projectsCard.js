@@ -1,6 +1,17 @@
 // 02/10/2024
 const PROJECTS_DATA = [
   {
+    name: 'flowsync',
+    link: 'https://github.com/BenardKevin/FlowSync-UI',
+    title: 'FlowSync',
+    description:'FlowSync is an application designed to optimize business management through personalized access features, analytical dashboards, and centralized management of users, inventory, sales, and purchases.',
+    date: 'Dec. 2024',
+    image: 'FlowSync.png',
+    color: 'yellow',
+    githubLink: 'FlowSync-UI',
+    tag_text: ['TypeScript', 'Java', 'Spring', 'PostgreSQL', 'Angular', 'Spring Data JPA', 'REST', 'Postman', 'Webapp', 'IntelliJ'],
+  },
+  {
     name: 'osteobooking',
     link: 'http://florine.benard.osteo.free.fr',
     title: 'OsteoBooking',
