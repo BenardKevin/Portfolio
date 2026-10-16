@@ -204,15 +204,15 @@ function createProject(link, projectTitle, description, date, image, color, gith
   const subtitle = document.createElement('div');
   subtitle.classList.add('postcard__subtitle', 'small');
 
-  const time = document.createElement('time');
-  time.setAttribute('datetime', date);
+  // const time = document.createElement('time');
+  // time.setAttribute('datetime', date);
 
   const icon1 = document.createElement('i');
   icon1.classList.add('mr-2');
-  time.appendChild(icon1);
-  time.appendChild(document.createTextNode(date));
+  // time.appendChild(icon1);
+  // time.appendChild(document.createTextNode(date));
 
-  subtitle.appendChild(time);
+  // subtitle.appendChild(time);
   
 
   const bar = document.createElement('div');

@@ -2,9 +2,9 @@
 let USER_LANGUAGE = navigator.language.split("-")[0];
 let TEXT_DATA = {
     en: {
-        nav_aboutme:"Who is he?",
-        nav_projects:"What does he do?",
-        nav_resume:"See his resume",
+        nav_aboutme:"About me",
+        nav_projects:"Projects",
+        nav_resume:"Resume",
         profile_subtitle: '["Software Engineer","Java Developer","Full-Stack Engineer","JavaScript Developer"]',
         button_resume: "Resume",
         button_projects: "Projects",
@@ -13,7 +13,8 @@ let TEXT_DATA = {
         text1: "Software Engineer with 1 year of experience in software development. Proficient in JavaScript and Java, with hands-on experience in designing, developing, and maintaining projects. Skilled in writing clean, efficient, and scalable code, I have contributed to various projects, focusing on delivering reliable software solutions.",
         text2: "I am passionate about leveraging modern development tools and methodologies to create user-friendly applications. Adept at problem-solving and collaborating with cross-functional teams to achieve project goals, I am eager to continue building my expertise in software engineering and contribute to innovative projects.",
         
-        project_title: "My creations",
+        project_title: "Some projects",
+        flowsync: "FlowSync is a web application built with React and Node.js that allows users to synchronize their tasks and projects across multiple devices. It features real-time updates, collaborative task management, and a user-friendly interface.",
         osteobooking: "OsteoBooking is a simple and intuitive website made in Angular 17 allowing users to book osteopathy sessions online. This application offers a user-friendly interface for managing appointments for patients.",
         statscovid: "Javascript web application focused on the evolution of Covid19 in France. It presents statistics in the form of a dashboard with maps, lists, graphs, kpi...",
         githarvest: "This project is a JavaScript-based application designed for a user management agency. The purpose is to retrieve and display users informations from GitHub\'s public API. The app fetches and shows details of 8 users at a time, including their profile picture, username, and a bio.",
@@ -23,9 +24,9 @@ let TEXT_DATA = {
         ogreboulotteur: "This C program is a simulation game where an Ogre boulotte children. The game logic is designed with arrays and loops, where the Ogre moves through a grid, catching children. The focus is on the simulation of movement and interactions, using basic collision detection to trigger when the Ogre catches a child."
     },
     es: {
-        nav_aboutme:"¿Quién es?",
-        nav_projects:"¿Qué hace?",
-        nav_resume:"Ver su currículum",
+        nav_aboutme:"Acerca de",
+        nav_projects:"Projectos",
+        nav_resume:"Currículum",
         profile_subtitle: '["Ingeniero de software","Programador Java","Ingeniero Full-Stack","Programador JavaScript"]',
         button_resume: "CV",
         button_projects: "Projects",
@@ -34,7 +35,8 @@ let TEXT_DATA = {
         text1: "Ingeniero de Software con 1 año de experiencia en desarrollo de software. Competente en JavaScript y Java, con experiencia práctica en el diseño, desarrollo y mantenimiento de proyectos. Hábil en la escritura de código limpio, eficiente y escalable, he contribuido a varios proyectos, centrándose en la entrega de soluciones de software fiables.",
         text2: "Me apasiona aprovechar las herramientas y metodologías de desarrollo modernas para crear aplicaciones fáciles de usar. Adepto a la resolución de problemas y a la colaboración con equipos multifuncionales para alcanzar los objetivos de los proyectos, estoy deseoso de seguir ampliando mis conocimientos en ingeniería de software y contribuir a proyectos innovadores.",
         
-        project_title: "Mis creaciones",
+        project_title: "Algunos proyectos",
+        flowsync: "FlowSync es una aplicación web construida con React y Node.js que permite a los usuarios sincronizar sus tareas y proyectos en múltiples dispositivos. Cuenta con actualizaciones en tiempo real, gestión colaborativa de tareas y una interfaz fácil de usar.",
         osteobooking: "OsteoBooking es una web sencilla e intuitiva realizada en Angular 17 que permite a los usuarios reservar sesiones de osteopatía online. Esta aplicación ofrece una interfaz fácil de usar para gestionar las citas de los pacientes",
         statscovid: "Aplicación web Javascript centrada en la evolución de Covid19 en Francia. Presenta estadísticas en forma de cuadro de mandos con mapas, listas, gráficos, kpi...",
         githarvest: "Este proyecto es una aplicación basada en JavaScript diseñada para una agencia de gestión de usuarios. El propósito es recuperar y mostrar información de los usuarios de la API pública de GitHub. La aplicación recupera y muestra los detalles de 8 usuarios a la vez, incluyendo su foto de perfil, nombre de usuario y una biografía",
@@ -44,18 +46,19 @@ let TEXT_DATA = {
         ogreboulotteur: "Este programa en C es un juego de simulación en el que un Ogre boulotte niños. La lógica del juego está diseñada con matrices y bucles, donde el Ogre se mueve a través de una cuadrícula, atrapando niños. La atención se centra en la simulación del movimiento y las interacciones, utilizando la detección de colisiones básica para disparar cuando el Ogro atrapa a un niño."
     },
     fr: {
-        nav_aboutme:"C'est qui?",
-        nav_projects:"Il fait quoi?",
-        nav_resume:"Son CV",
+        nav_aboutme:"A propos",
+        nav_projects:"Projets",
+        nav_resume:"CV",
         profile_subtitle: '["Ingénieur logiciel", "Développeur Java", "Ingénieur Full-Stack", "Développeur JavaScript"]',
         button_resume: "CV",
         button_projects: "Projets",
         
         aboutme_title: "A propos de moi",
-        text1: "Ingénieur logiciel avec 1 an d'expérience dans le développement de logiciels. Maîtrisant JavaScript et Java, j'ai une expérience pratique de la conception, du développement et de la maintenance de projets. Habile à écrire un code propre, efficace et évolutif, j'ai contribué à divers projets, en me concentrant sur la fourniture de solutions logicielles fiables.",
+        text1: "Ingénieur logiciel avec 1 an d'expérience dans le développement de logiciels. J'ai une expérience pratique de la conception, du développement et de la maintenance de projets. Habile à écrire un code propre, efficace et évolutif, j'ai contribué à divers projets, en me concentrant sur la fourniture de solutions logicielles fiables.",
         text2: "Je suis passionné par l'utilisation de nouvelles technologies et de méthodologies de développement modernes pour créer des applications conviviales. Adepte de la résolution de problèmes et de la collaboration avec des équipes interfonctionnelles pour atteindre les objectifs d'un projet, je suis impatient de continuer à développer mon expertise en ingénierie logicielle et de contribuer à des projets innovants.",
         
-        project_title: "Mes créations",
+        project_title: "Projets personnels",
+        flowsync: "FlowSync est une application web construite avec React et Node.js qui permet aux utilisateurs de synchroniser leurs tâches et projets sur plusieurs appareils. Elle propose des mises à jour en temps réel, une gestion collaborative des tâches et une interface conviviale.",
         osteobooking : "OsteoBooking est un site web simple et intuitif réalisé en Angular 17 permettant aux utilisateurs de réserver des séances d'ostéopathie en ligne. Cette application offre une interface conviviale pour la gestion des rendez-vous des patients",
         statscovid : "Application web Javascript axée sur l'évolution de Covid19 en France. Elle présente des statistiques sous forme de tableau de bord avec des cartes, des listes, des graphiques, des kpi...",
         githarvest : "Ce projet est une application basée sur JavaScript conçue pour une agence de gestion des utilisateurs. L'objectif est de récupérer et d'afficher des informations sur les utilisateurs à partir de l'API publique de GitHub. L'application récupère et affiche les détails de 8 utilisateurs à la fois, y compris leur photo de profil, leur nom d'utilisateur et leur biographie. ",
@@ -77,6 +80,7 @@ const TEXT_ID = {
     text2: "#aboutme_text2",
     project_title: "#project_title",
     osteobooking: "#osteobooking",
+    flowsync: "#flowsync",
     statscovid: "#statscovid",
     githarvest: "#githarvest",
     easysave: "#easysave",

@@ -28,7 +28,7 @@ a:hover { color: var(--text-color-hover) !important; }
 
 html { height: 100vh; perspective: 100px; }
 body { font-family: "Baloo 2", cursive; font-size: 16px; text-rendering: optimizeLegibility; font-weight: initial; }  
-main, #projects { overflow-y: overlay; scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+main, #projects { overflow-y: overlay; }
 nav, section, footer { scroll-snap-align: start; }
 article { scroll-snap-align: center; }
 a, a:hover { text-decoration: none; transition: color 0.3s ease-in-out; }

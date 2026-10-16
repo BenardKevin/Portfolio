@@ -114,7 +114,7 @@
   .postcard .postcard__title { font-size: 2rem; }
   .postcard .postcard__tagbox { justify-content: start; }
   .postcard .postcard__img { max-width: 18.75vw; max-height: 100%; transition: transform 0.3s ease; }
-  .postcard .postcard__text { padding: 3rem; width: 100%; }
+  .postcard .postcard__text { padding: 3rem; padding-left: 4rem; width: 100%; }
   .postcard .media.postcard__text:before { content: ""; position: absolute; top: -20%; height: 130%; width: 3.4375vw; z-index: -5; }
 }
 @media screen and (min-width: 1024px) {
